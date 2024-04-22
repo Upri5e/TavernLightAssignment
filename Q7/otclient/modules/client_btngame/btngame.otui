@@ -8,7 +8,7 @@ MainWindow
   
   Button
     id: movingButton
-    !text: tr('Press')
+    !text: tr('Jump!')
     width: 64
     anchors.right: parent.right
     anchors.bottom: parent.bottom
