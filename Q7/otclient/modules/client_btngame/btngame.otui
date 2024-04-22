@@ -1,0 +1,15 @@
+MainWindow
+  id: mainWindow
+  !text: tr('Button Game')
+  size: 550 400
+  @onEscape: stop()
+  image-border: 6
+  image-border-top: 27
+  
+  Button
+    id: movingButton
+    !text: tr('Press')
+    width: 64
+    anchors.right: parent.right
+    anchors.bottom: parent.bottom
+    @onClick: resetBtnPosition()

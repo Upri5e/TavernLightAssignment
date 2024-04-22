@@ -1,0 +1,9 @@
+Module
+  name: client_btngame
+  description: 
+  author: Hassan
+  website: None
+  sandboxed: true
+  scripts: [ btngame ]
+  @onLoad: init()
+  @onUnload: terminate()
