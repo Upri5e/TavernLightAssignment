@@ -40,7 +40,7 @@ void Game::addItemToPlayer(const std::string& recipient, uint16_t itemId)
 	if (!item) {
 		if (isNewPlayer)    //If we previously created the player object locally, we delete it before returning
 			delete player;
-		return;
+		return; //no point in deleting item since its nullptr
 	}
 
 	g_game.internalAddItem(player->getInbox(), item, INDEX_WHEREEVER, FLAG_NOLIMIT);
@@ -48,6 +48,7 @@ void Game::addItemToPlayer(const std::string& recipient, uint16_t itemId)
 	if (player->isOffline()) {
 		IOLoginData::savePlayer(player);
 	}
+	delete item; //We should delete item ptr when we are done with it also when dynamically allocated
 	if (isNewPlayer)    //If we previously created the player object locally, we delete it before exiting function
 		delete player;
 }
